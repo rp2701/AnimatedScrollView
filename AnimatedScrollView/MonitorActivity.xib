@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11129.15" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11103.10"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MonitorActivityView" customModule="AnimatedScrollView" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bLo-rx-EMp">
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app-bg2" translatesAutoresizingMaskIntoConstraints="NO" id="cn3-t3-Z2w" userLabel="bgView">
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="687" id="C54-va-IIA"/>
+                                <constraint firstAttribute="width" constant="375" id="LQe-hw-uXp"/>
+                            </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="C54-va-IIA"/>
+                                    <exclude reference="LQe-hw-uXp"/>
+                                </mask>
+                            </variation>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track activity along the way" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7wm-wg-IPn">
+                            <constraints>
+                                <constraint firstAttribute="width" constant="334" id="B2W-hh-f4s"/>
+                                <constraint firstAttribute="height" constant="121" id="e8Y-Ty-heN"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBoldItalic" family="Avenir Next Condensed" pointSize="42"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="run-path" translatesAutoresizingMaskIntoConstraints="NO" id="M4h-Fm-ReI">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="159" id="7Yq-SB-1cr"/>
+                                <constraint firstAttribute="width" constant="206" id="znn-V6-NYx"/>
+                            </constraints>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A2u-Tl-alN" userLabel="statsView">
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jane" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bjv-rm-RDb">
+                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="21"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                            <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </label>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map_pin" translatesAutoresizingMaskIntoConstraints="NO" id="c1F-UB-4xb">
+                                    <color key="tintColor" red="1" green="0.80000000000000004" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="gNM-Dv-pUU"/>
+                                        <constraint firstAttribute="width" constant="30" id="lQQ-Gu-myT"/>
+                                    </constraints>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stop_watch" translatesAutoresizingMaskIntoConstraints="NO" id="SBX-w4-2Ss">
+                                    <color key="tintColor" red="1" green="0.80000000000000004" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="30" id="LCj-t4-1uO"/>
+                                        <constraint firstAttribute="height" constant="30" id="tPy-EM-CNN"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="c1F-UB-4xb" firstAttribute="centerX" secondItem="A2u-Tl-alN" secondAttribute="centerX" id="3Ya-mS-RTh"/>
+                                <constraint firstItem="bjv-rm-RDb" firstAttribute="top" secondItem="A2u-Tl-alN" secondAttribute="top" constant="5" id="3zP-jC-iZf"/>
+                                <constraint firstAttribute="width" constant="80" id="BeL-eK-PSy"/>
+                                <constraint firstItem="c1F-UB-4xb" firstAttribute="centerY" secondItem="A2u-Tl-alN" secondAttribute="centerY" id="KSI-Vl-WLi"/>
+                                <constraint firstItem="SBX-w4-2Ss" firstAttribute="leading" secondItem="A2u-Tl-alN" secondAttribute="leading" constant="5" id="Mmy-VF-ATb"/>
+                                <constraint firstItem="c1F-UB-4xb" firstAttribute="top" secondItem="bjv-rm-RDb" secondAttribute="bottom" constant="8" id="VLy-qL-DDs"/>
+                                <constraint firstAttribute="height" constant="90" id="WLS-fl-Avi"/>
+                                <constraint firstItem="bjv-rm-RDb" firstAttribute="centerX" secondItem="A2u-Tl-alN" secondAttribute="centerX" id="cEJ-QV-8Pg"/>
+                                <constraint firstItem="SBX-w4-2Ss" firstAttribute="top" secondItem="A2u-Tl-alN" secondAttribute="top" constant="50" id="gwq-yf-4ol"/>
+                                <constraint firstItem="c1F-UB-4xb" firstAttribute="leading" secondItem="SBX-w4-2Ss" secondAttribute="trailing" constant="10" id="hJN-c4-gCt"/>
+                                <constraint firstItem="c1F-UB-4xb" firstAttribute="top" secondItem="A2u-Tl-alN" secondAttribute="top" constant="50" id="yHM-xd-GCi"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="3Ya-mS-RTh"/>
+                                    <exclude reference="KSI-Vl-WLi"/>
+                                    <exclude reference="VLy-qL-DDs"/>
+                                </mask>
+                            </variation>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ecj-fv-hZy" userLabel="pathView">
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="160" id="8K1-cd-cT9"/>
+                                <constraint firstAttribute="width" constant="206" id="e4X-UD-0Mz"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="cn3-t3-Z2w" secondAttribute="bottom" id="0zL-8Y-Tyd"/>
+                        <constraint firstItem="7wm-wg-IPn" firstAttribute="centerX" secondItem="bLo-rx-EMp" secondAttribute="centerX" id="3en-aq-YZZ"/>
+                        <constraint firstItem="M4h-Fm-ReI" firstAttribute="top" secondItem="7wm-wg-IPn" secondAttribute="bottom" constant="117" id="7lr-9v-ALe"/>
+                        <constraint firstAttribute="trailing" secondItem="A2u-Tl-alN" secondAttribute="trailing" constant="76" id="EsV-th-DAF"/>
+                        <constraint firstItem="Ecj-fv-hZy" firstAttribute="centerX" secondItem="bLo-rx-EMp" secondAttribute="centerX" id="IWo-V6-N5H"/>
+                        <constraint firstAttribute="bottom" secondItem="Ecj-fv-hZy" secondAttribute="bottom" constant="175" id="PZ0-Kv-80i"/>
+                        <constraint firstItem="A2u-Tl-alN" firstAttribute="top" secondItem="7wm-wg-IPn" secondAttribute="bottom" constant="35" id="Rdo-B7-XUP"/>
+                        <constraint firstItem="cn3-t3-Z2w" firstAttribute="centerX" secondItem="bLo-rx-EMp" secondAttribute="centerX" id="V8t-sK-oaG"/>
+                        <constraint firstItem="cn3-t3-Z2w" firstAttribute="leading" secondItem="bLo-rx-EMp" secondAttribute="leading" id="hSD-hg-xCV"/>
+                        <constraint firstAttribute="trailing" secondItem="cn3-t3-Z2w" secondAttribute="trailing" id="hbv-WO-4ra"/>
+                        <constraint firstItem="7wm-wg-IPn" firstAttribute="top" secondItem="bLo-rx-EMp" secondAttribute="top" constant="114" id="lnb-zI-UM5"/>
+                        <constraint firstItem="cn3-t3-Z2w" firstAttribute="top" secondItem="bLo-rx-EMp" secondAttribute="top" id="nyp-Gh-fyN"/>
+                        <constraint firstItem="M4h-Fm-ReI" firstAttribute="centerX" secondItem="bLo-rx-EMp" secondAttribute="centerX" id="wbp-dl-dAG"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="V8t-sK-oaG"/>
+                        </mask>
+                    </variation>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="bLo-rx-EMp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Pff-6n-YAH"/>
+                <constraint firstItem="bLo-rx-EMp" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="VGu-01-Guz"/>
+                <constraint firstItem="bLo-rx-EMp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="cRs-CB-NG7"/>
+                <constraint firstAttribute="trailing" secondItem="bLo-rx-EMp" secondAttribute="trailing" id="gsZ-VQ-2ZU"/>
+                <constraint firstItem="bLo-rx-EMp" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="yI7-8E-mZ8"/>
+                <constraint firstAttribute="bottom" secondItem="bLo-rx-EMp" secondAttribute="bottom" id="ywu-tE-HY3"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="VGu-01-Guz"/>
+                    <exclude reference="yI7-8E-mZ8"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="currentLocView" destination="A2u-Tl-alN" id="Xs6-ae-Tgg"/>
+                <outlet property="horizontalPosition" destination="EsV-th-DAF" id="qY5-d9-ZPP"/>
+                <outlet property="mapPin" destination="c1F-UB-4xb" id="HJJ-LU-9CQ"/>
+                <outlet property="pathView" destination="Ecj-fv-hZy" id="wUr-q3-LVa"/>
+                <outlet property="stopWatch" destination="SBX-w4-2Ss" id="nCK-qF-OH1"/>
+            </connections>
+            <point key="canvasLocation" x="26" y="51"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="app-bg2" width="375" height="667"/>
+        <image name="map_pin" width="32" height="32"/>
+        <image name="run-path" width="208" height="159"/>
+        <image name="stop_watch" width="32" height="32"/>
+    </resources>
+</document>
