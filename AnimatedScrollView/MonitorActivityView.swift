@@ -19,6 +19,18 @@ class MonitorActivityView: UIView {
     var shapeLayer : CAShapeLayer?
     var shapeLayer1 : CAShapeLayer?
     
+    
+    
+    @IBOutlet weak var selectedUserPos3: NSLayoutConstraint!
+    
+    @IBOutlet weak var selectedUserOffsetFromView: NSLayoutConstraint!
+    
+    var selectedUserPosition: CGFloat {
+        get {
+                return self.selectedUserPos3.constant + self.selectedUserOffsetFromView.constant
+        }
+    }
+    
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -38,32 +50,22 @@ class MonitorActivityView: UIView {
         super.awakeFromNib()
         
         // set the horizontal position off the screen; animated later
-        self.horizontalPosition.constant = -196.0
+        self.horizontalPosition.constant = -176.0
         self.currentLocView.layer.borderColor = UIColor.white().cgColor
-        self.currentLocView.layer.borderWidth  = 2.0
+        self.currentLocView.layer.borderWidth  = 1.0
         
         self.mapPin.image = UIImage(named: "map_pin")?.withRenderingMode(.alwaysTemplate)
         self.stopWatch.image = UIImage(named: "stop_watch")?.withRenderingMode(.alwaysTemplate)
-        
-        
-        let imageView = UIImageView(image: UIImage(named: "map"))
-        imageView.frame = self.bounds
-        imageView.frame.size.height = imageView.frame.size.height + 20
-        
-        imageView.contentMode = .scaleToFill
-    
-        
-        imageView.blurImage()
-        self.addSubview(imageView)
-        self.sendSubview(toBack: imageView)
         
         // create and add the stroked path
         self.shapeLayer = self.getPathLayer()
         
         self.shapeLayer?.transform = CATransform3DMakeScale(0.5, 0.5, 1);
+        // scale the shape layer to half the size
         self.pathView.layer.addSublayer(self.shapeLayer!)
         
         self.shapeLayer1 = self.getPathLayer1()
+        // scale the shape layer to half the size
         self.shapeLayer1?.transform = CATransform3DMakeScale(0.5, 0.5, 1);
         
         self.pathView.layer.addSublayer(self.shapeLayer1!)
@@ -95,7 +97,7 @@ class MonitorActivityView: UIView {
     func animatePath(percentage: CGFloat) {
     
         
-        let minScale = 0.54
+        let minScale = 0.50
         let maxScale = 0.75
         
         let scalingFactor = maxScale - minScale
@@ -107,10 +109,10 @@ class MonitorActivityView: UIView {
         print("Actual scale: \(actualScale)")
         
         if actualScale <= 1.0 {
-            UIView.animateKeyframes(withDuration: 0, delay: 0, options: options, animations: {
+            UIView.animateKeyframes(withDuration: 1.0, delay: 0.5, options: options, animations: {
                 
                 // animate the stroke
-                UIView.addKeyframe(withRelativeStartTime: actualScale, relativeDuration: 0, animations: {
+                UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0, animations: {
                     self.shapeLayer?.strokeEnd = fabs(CGFloat(actualScale))
                     self.shapeLayer1?.strokeEnd = fabs(CGFloat(actualScale))
                 })
@@ -123,30 +125,18 @@ class MonitorActivityView: UIView {
     func getStrokePath() -> CGPath
     {
         let path = UIBezierPath()
-        
-        
+    
         path.move(to: CGPoint(x: 160,y: 25))
         path.addCurve(to:CGPoint(x: 300, y: 120), controlPoint1: CGPoint(x: 320, y: 0) , controlPoint2: CGPoint(x: 300, y: 80))
-        
         path.addCurve(to:CGPoint(x: 80, y: 380), controlPoint1: CGPoint(x: 300, y: 200) , controlPoint2: CGPoint(x: 200, y: 480))
-        
         path.addCurve(to:CGPoint(x: 140, y: 300), controlPoint1: CGPoint(x: 0, y: 300) , controlPoint2: CGPoint(x: 200, y: 220))
-        
         path.addCurve(to:CGPoint(x: 210, y: 200), controlPoint1: CGPoint(x: 30, y: 420) , controlPoint2: CGPoint(x: 280, y: 300))
-        
         path.addCurve(to:CGPoint(x: 70, y: 110), controlPoint1: CGPoint(x: 110, y: 80) , controlPoint2: CGPoint(x: 110, y: 80))
-        
         path.addCurve(to:CGPoint(x: 160, y: 25), controlPoint1: CGPoint(x: 0, y: 160) , controlPoint2: CGPoint(x: 0, y: 40))
-        
-        
         path.stroke()
         
         return path.cgPath
-        
     }
-    
-    
-   
     
     
     func getPathLayer() -> CAShapeLayer {
@@ -172,5 +162,4 @@ class MonitorActivityView: UIView {
         
         return shapeLayer
     }
-
 }

@@ -11,6 +11,21 @@
     },
     {
       "idiom" : "universal",
+      "filename" : "app-bg@3x-1.png",
+      "scale" : "3x"
+    },
+    {
+      "idiom" : "iphone",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "iphone",
+      "filename" : "app-bg@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "iphone",
+      "filename" : "app-bg@3x.png",
       "scale" : "3x"
     }
   ],

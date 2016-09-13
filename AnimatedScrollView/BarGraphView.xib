@@ -14,11 +14,17 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cEV-g9-gGH">
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app-bg" translatesAutoresizingMaskIntoConstraints="NO" id="wIf-nv-ZTw">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app-bg5" translatesAutoresizingMaskIntoConstraints="NO" id="wIf-nv-ZTw">
                             <constraints>
                                 <constraint firstAttribute="height" constant="687" id="Dp9-do-gru"/>
                                 <constraint firstAttribute="width" constant="375" id="xzr-2d-7kz"/>
                             </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="Dp9-do-gru"/>
+                                    <exclude reference="xzr-2d-7kz"/>
+                                </mask>
+                            </variation>
                         </imageView>
                         <stackView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" distribution="equalSpacing" alignment="bottom" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="fE0-Nf-beZ">
                             <subviews>
@@ -89,6 +95,7 @@
                                 <constraint firstAttribute="height" constant="130" id="0Pa-yf-3dI"/>
                                 <constraint firstAttribute="bottom" secondItem="rZE-kY-VwZ" secondAttribute="bottom" id="EA8-7B-Yxk"/>
                                 <constraint firstAttribute="bottom" secondItem="XmU-2j-oLe" secondAttribute="bottom" id="Twf-Mx-God"/>
+                                <constraint firstAttribute="width" constant="210" id="XpE-Gn-QYa"/>
                                 <constraint firstAttribute="bottom" secondItem="GPC-yj-xwE" secondAttribute="bottom" id="cEX-Mp-pd1"/>
                                 <constraint firstAttribute="width" constant="140" id="g5E-e9-vsX"/>
                             </constraints>
@@ -113,7 +120,7 @@
                                 <constraint firstAttribute="height" constant="21" id="SuY-Kh-nGH"/>
                                 <constraint firstAttribute="width" constant="59" id="jEY-P2-UxX"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="21"/>
+                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="21"/>
                             <color key="textColor" red="1" green="0.80000000000000004" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                             <variation key="default">
@@ -131,36 +138,60 @@
                             <color key="textColor" red="1" green="0.80000000000000004" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l3N-Qa-zNX">
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="200" id="XSb-rT-cNP"/>
+                                <constraint firstAttribute="width" constant="210" id="a3v-IO-ocH"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="FGc-4R-Z4Z" firstAttribute="top" secondItem="5cE-Jk-nLm" secondAttribute="bottom" constant="92" id="4VI-ep-6oO"/>
-                        <constraint firstItem="wIf-nv-ZTw" firstAttribute="centerX" secondItem="cEV-g9-gGH" secondAttribute="centerX" id="7TM-y5-jy0"/>
+                        <constraint firstItem="fE0-Nf-beZ" firstAttribute="top" secondItem="cEV-g9-gGH" secondAttribute="top" constant="417" id="89U-Yi-ND3"/>
+                        <constraint firstAttribute="trailing" secondItem="wIf-nv-ZTw" secondAttribute="trailing" id="AJP-x8-kuv"/>
+                        <constraint firstAttribute="bottom" secondItem="fE0-Nf-beZ" secondAttribute="bottom" constant="204" id="JUj-7I-vPV"/>
                         <constraint firstAttribute="trailing" secondItem="FGc-4R-Z4Z" secondAttribute="trailing" constant="70" id="M5C-pn-QYW"/>
+                        <constraint firstItem="l3N-Qa-zNX" firstAttribute="centerX" secondItem="cEV-g9-gGH" secondAttribute="centerX" id="PiP-eB-32v"/>
                         <constraint firstItem="wIf-nv-ZTw" firstAttribute="top" secondItem="cEV-g9-gGH" secondAttribute="top" id="XQa-iT-Gy6"/>
                         <constraint firstItem="5cE-Jk-nLm" firstAttribute="centerX" secondItem="cEV-g9-gGH" secondAttribute="centerX" id="Xdt-kn-oEH"/>
                         <constraint firstAttribute="height" constant="687" id="ZGG-7y-NJP"/>
-                        <constraint firstItem="ZAO-yL-0KD" firstAttribute="leading" secondItem="cEV-g9-gGH" secondAttribute="leading" constant="83" id="Zze-hu-tZm"/>
+                        <constraint firstItem="ZAO-yL-0KD" firstAttribute="leading" secondItem="cEV-g9-gGH" secondAttribute="leading" constant="86" id="Zze-hu-tZm"/>
                         <constraint firstItem="ZAO-yL-0KD" firstAttribute="top" secondItem="fE0-Nf-beZ" secondAttribute="bottom" constant="15" id="aiZ-WN-6Vv"/>
-                        <constraint firstAttribute="bottom" secondItem="fE0-Nf-beZ" secondAttribute="bottom" constant="207" id="bYg-Pr-EBg"/>
-                        <constraint firstItem="FGc-4R-Z4Z" firstAttribute="leading" secondItem="cEV-g9-gGH" secondAttribute="leading" constant="16" id="ccZ-4Z-KZa"/>
+                        <constraint firstItem="l3N-Qa-zNX" firstAttribute="bottom" secondItem="FGc-4R-Z4Z" secondAttribute="bottom" id="c9O-9G-k5F"/>
+                        <constraint firstItem="FGc-4R-Z4Z" firstAttribute="leading" secondItem="cEV-g9-gGH" secondAttribute="leading" constant="12" id="ccZ-4Z-KZa"/>
+                        <constraint firstItem="wIf-nv-ZTw" firstAttribute="leading" secondItem="cEV-g9-gGH" secondAttribute="leading" id="dZH-46-J5t"/>
+                        <constraint firstItem="l3N-Qa-zNX" firstAttribute="leading" secondItem="fE0-Nf-beZ" secondAttribute="leading" id="e9U-VZ-HNq"/>
                         <constraint firstItem="fE0-Nf-beZ" firstAttribute="centerX" secondItem="cEV-g9-gGH" secondAttribute="centerX" id="hIw-ef-x2o"/>
                         <constraint firstAttribute="bottom" secondItem="FGc-4R-Z4Z" secondAttribute="bottom" constant="215" id="hqb-8Q-hOF"/>
+                        <constraint firstAttribute="bottom" secondItem="wIf-nv-ZTw" secondAttribute="bottom" id="mWw-md-ICj"/>
+                        <constraint firstItem="l3N-Qa-zNX" firstAttribute="centerX" secondItem="fE0-Nf-beZ" secondAttribute="centerX" id="tWj-15-z4u"/>
                         <constraint firstAttribute="width" constant="375" id="tZj-ed-8od"/>
+                        <constraint firstItem="fE0-Nf-beZ" firstAttribute="top" secondItem="l3N-Qa-zNX" secondAttribute="bottom" constant="-110" id="uUs-2D-Ugm"/>
+                        <constraint firstItem="FGc-4R-Z4Z" firstAttribute="top" secondItem="l3N-Qa-zNX" secondAttribute="bottom" constant="8" symbolic="YES" id="ueP-KQ-5iN"/>
                         <constraint firstItem="5cE-Jk-nLm" firstAttribute="top" secondItem="cEV-g9-gGH" secondAttribute="top" constant="114" id="vkN-2V-iJ5"/>
+                        <constraint firstItem="l3N-Qa-zNX" firstAttribute="top" secondItem="5cE-Jk-nLm" secondAttribute="bottom" constant="39" id="x70-X8-GK6"/>
                     </constraints>
                     <variation key="default">
                         <mask key="constraints">
+                            <exclude reference="ZGG-7y-NJP"/>
+                            <exclude reference="tZj-ed-8od"/>
+                            <exclude reference="c9O-9G-k5F"/>
+                            <exclude reference="tWj-15-z4u"/>
+                            <exclude reference="x70-X8-GK6"/>
+                            <exclude reference="89U-Yi-ND3"/>
                             <exclude reference="4VI-ep-6oO"/>
                             <exclude reference="M5C-pn-QYW"/>
+                            <exclude reference="ueP-KQ-5iN"/>
                         </mask>
                     </variation>
                 </view>
             </subviews>
             <constraints>
-                <constraint firstItem="cEV-g9-gGH" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="9cY-Eq-XS2"/>
                 <constraint firstItem="cEV-g9-gGH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Ahf-Yp-xvS"/>
                 <constraint firstAttribute="trailing" secondItem="cEV-g9-gGH" secondAttribute="trailing" id="YUn-iK-IcN"/>
+                <constraint firstAttribute="bottom" secondItem="cEV-g9-gGH" secondAttribute="bottom" constant="-20" id="beC-vK-Mu8"/>
                 <constraint firstAttribute="trailing" secondItem="cEV-g9-gGH" secondAttribute="trailing" id="cg0-rd-Vex"/>
                 <constraint firstAttribute="trailing" secondItem="cEV-g9-gGH" secondAttribute="trailing" id="hK2-AR-snv"/>
                 <constraint firstItem="cEV-g9-gGH" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="yVp-2U-dSQ"/>
@@ -175,12 +206,13 @@
             </variation>
             <connections>
                 <outlet property="activitiesLabel" destination="FGc-4R-Z4Z" id="NhA-7H-UjH"/>
-                <outlet property="stackView" destination="fE0-Nf-beZ" id="L7o-Fr-Gbm"/>
+                <outlet property="pathView" destination="l3N-Qa-zNX" id="xek-fw-mgj"/>
+                <outlet property="stackView" destination="fE0-Nf-beZ" id="d6y-se-Fea"/>
             </connections>
             <point key="canvasLocation" x="24.5" y="52.5"/>
         </view>
     </objects>
     <resources>
-        <image name="app-bg" width="375" height="667"/>
+        <image name="app-bg5" width="375" height="667"/>
     </resources>
 </document>
