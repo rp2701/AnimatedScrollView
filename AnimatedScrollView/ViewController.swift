@@ -30,7 +30,9 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     var barGraphView: BarGraphView?
     
     
-    static var count = 0
+    var totalOffset : CGFloat?
+    
+//    static var count = 0
     
     let color2 = 0x66e6ff
     let color1 = 0x6699ff
@@ -95,10 +97,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         self.scrollView.isPagingEnabled = true
         self.scrollView.showsHorizontalScrollIndicator = false
         self.scrollView.isScrollEnabled = true
-        
-        print("Position 2: \(self.startActivityView!.selectedUserPosition)")
-        print("Position 3: \(self.trackingView!.selectedUserPosition)")
-        
         
         self.configureMainTitleLabel()
         self.configureButtons()
@@ -199,8 +197,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
                 searchFriendsView?.animateUsers(percentage)
             
                 UIView.animate(withDuration: 0.6, delay: 0.2, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: UIViewAnimationOptions.curveEaseOut, animations: {
-                    
-                        self.selectedUser?.transform = CGAffineTransform(translationX: 191.0, y: 0) // REMOVE: hardwired valu
+                        self.selectedUser?.transform = CGAffineTransform(translationX: (self.searchFriendsView?.position1)!, y: 0) //
                         self.selectedUser?.alpha = 1.0
                     }, completion: nil)
             case 0.5:
@@ -224,15 +221,22 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     func animateSelectedUser(_ percentage: CGFloat) {
         
-        let minScale = 0.1
+        if totalOffset == nil {
+           
+            totalOffset = (self.searchFriendsView?.position2)! + (self.startActivityView?.bounds.width)! + (self.trackingView?.position4)!
+            
+            print("Total Offset: \(totalOffset!)")
+        }
+        
+        let minScale = 0.12
         let maxScale = 0.75
         let scalingFactor = maxScale - minScale
         let actualScale = (Double(percentage) - minScale) / scalingFactor
         
         UIView.animateKeyframes(withDuration: 0, delay: 0, options: UIViewKeyframeAnimationOptions.calculationModeCubicPaced, animations: {
             
-//                let tX = actualScale * 972// REMOVE  hardwired value (414)
-                let tX = actualScale * 865// REMOVE  hardwired value (414)
+                let tX = actualScale * Double(self.totalOffset!) // REMOVE  hardwired value
+//                let tX = actualScale * 875// REMOVE  hardwired value
                 print("Translate \(percentage * 100) : \(tX)")
                 UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0, animations: {
                 self.selectedUser?.alpha = 1.0

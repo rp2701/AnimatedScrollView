@@ -16,6 +16,7 @@ class SearchFriendsView: UIView {
     @IBOutlet weak var userSearch: UIImageView!
     
     @IBOutlet weak var athleteSearch: UIImageView!
+    @IBOutlet weak var selectedUserPosition1: UIView!
     
     var searchAnimated = false
     
@@ -26,19 +27,40 @@ class SearchFriendsView: UIView {
     
     
     @IBOutlet weak var selectedUserPos1: NSLayoutConstraint!
+    
+    var position1 : CGFloat {
+        get {
+            print("Width: \(self.bounds.width)")
+            return self.bounds.width - (40 + 70 + selectedUserPos1.constant)
+        }
+    }
+    
+    
+    var position2 : CGFloat {
+        get {
+            print("Position2: \(selectedUserPosition1.frame.origin.x + selectedUserPosition1.frame.size.width)")
+            return selectedUserPosition1.frame.origin.x + selectedUserPosition1.frame.size.width
+        }
+    }
+    
+    
+    
     override func awakeFromNib() {
-        
-        super.awakeFromNib()
-        
-        self.user1.transform = CGAffineTransform(translationX: -192.0, y: 50.0)
-        self.user2.transform = CGAffineTransform(translationX: -192.0, y: -50.0)
         
         self.user1.alpha = 0
         self.user2.alpha = 0
-        
+    
         self.athleteSearch.image = UIImage(named: "search")?.withRenderingMode(.alwaysTemplate)
-        
+    
+        super.awakeFromNib()
         print("Position 1 \(self.selectedUserPos1.constant)")
+    }
+    
+    
+    override func layoutSubviews() {
+        
+        self.user1.transform = CGAffineTransform(translationX: -self.position1, y: 50.0)
+        self.user2.transform = CGAffineTransform(translationX: -self.position1, y: -50.0)
     }
     
     
@@ -51,12 +73,12 @@ class SearchFriendsView: UIView {
                            initialSpringVelocity: 0.5,
                            options: UIViewAnimationOptions.curveEaseOut,
                            animations: {
-                            self.userSearch?.transform = CGAffineTransform(scaleX: 1.4, y: 1.4)
-                        
+                            self.userSearch?.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+                 
                         }, completion: { _ in
 
                             // back to identity transform
-                            UIView.animate(withDuration: 0.5, animations: {
+                            UIView.animate(withDuration: 0.7, animations: {
                                 
                                 self.userSearch?.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
                             })

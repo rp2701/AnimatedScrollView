@@ -9,7 +9,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SearchFriendsView" customModule="AnimatedScrollView" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app-bg" translatesAutoresizingMaskIntoConstraints="NO" id="EQW-s8-XPL"/>
@@ -35,7 +35,7 @@
                         <constraint firstAttribute="width" constant="40" id="OuA-5j-mlU"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="vfu-sR-sDU">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="vfu-sR-sDU" userLabel="selectedUser">
                     <color key="tintColor" red="1" green="0.80000000000000004" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="40" id="j3k-UW-AE1"/>
@@ -45,8 +45,8 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search" translatesAutoresizingMaskIntoConstraints="NO" id="iMR-HO-Zij">
                     <color key="tintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                 </imageView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qic-Bl-6ga">
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qic-Bl-6ga" userLabel="initialPositionView">
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="40" id="BAe-BE-dbV"/>
                         <constraint firstAttribute="height" constant="40" id="wI3-C2-BXw"/>
@@ -62,6 +62,7 @@
                 <constraint firstAttribute="trailing" secondItem="Qic-Bl-6ga" secondAttribute="trailing" constant="74" id="Af0-97-uNu"/>
                 <constraint firstItem="EQW-s8-XPL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Du5-Cr-kDU"/>
                 <constraint firstAttribute="trailing" secondItem="Hge-eI-lOr" secondAttribute="trailing" constant="74" id="FTX-hp-6dp"/>
+                <constraint firstItem="vfu-sR-sDU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="70" id="IfC-N3-9vx"/>
                 <constraint firstItem="2Lm-yx-UPb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="114" id="SZN-yl-Ove"/>
                 <constraint firstAttribute="trailing" secondItem="EQW-s8-XPL" secondAttribute="trailing" id="V62-UG-rcN"/>
                 <constraint firstItem="EQW-s8-XPL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Xy6-Nx-mPh"/>
@@ -75,6 +76,7 @@
             <connections>
                 <outlet property="athleteSearch" destination="iMR-HO-Zij" id="44C-YZ-Str"/>
                 <outlet property="selectedUserPos1" destination="Af0-97-uNu" id="JWZ-Th-uG1"/>
+                <outlet property="selectedUserPosition1" destination="Qic-Bl-6ga" id="825-sD-CDs"/>
                 <outlet property="user1" destination="Hge-eI-lOr" id="4pM-Oi-WUf"/>
                 <outlet property="user2" destination="J7a-RB-xen" id="ux3-di-UsH"/>
                 <outlet property="userSearch" destination="iMR-HO-Zij" id="kw0-Un-tST"/>

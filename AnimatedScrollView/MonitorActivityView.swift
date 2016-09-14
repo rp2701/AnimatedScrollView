@@ -21,28 +21,15 @@ class MonitorActivityView: UIView {
     
     
     
-    @IBOutlet weak var selectedUserPos3: NSLayoutConstraint!
+    @IBOutlet weak var selectedUser: UIView!    
     
-    @IBOutlet weak var selectedUserOffsetFromView: NSLayoutConstraint!
+
     
-    var selectedUserPosition: CGFloat {
-        get {
-                return self.selectedUserPos3.constant + self.selectedUserOffsetFromView.constant
-        }
-    }
-    
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+    var position4 : CGFloat?
 
     static func CustomView() -> MonitorActivityView {
         
         return (Bundle.main().loadNibNamed("MonitorActivity", owner: self, options: nil) .last as? MonitorActivityView)!
-        
     }
     
     
@@ -71,6 +58,10 @@ class MonitorActivityView: UIView {
         self.pathView.layer.addSublayer(self.shapeLayer1!)
     }
     
+    override func layoutSubviews() {
+         position4 = self.pathView.frame.origin.x + self.selectedUser.frame.origin.x
+        print("Position4: \(position4)")
+    }
     
     func animateCurrentLocView(percentage: CGFloat) {
         
@@ -78,7 +69,7 @@ class MonitorActivityView: UIView {
             case 0.50:
                 self.horizontalPosition.constant = -176.0
             case 0.75:
-                self.horizontalPosition.constant = 76.0
+                self.horizontalPosition.constant = 80.0
             default:
                 break
         }

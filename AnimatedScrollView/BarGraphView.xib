@@ -177,13 +177,13 @@
                         <mask key="constraints">
                             <exclude reference="ZGG-7y-NJP"/>
                             <exclude reference="tZj-ed-8od"/>
-                            <exclude reference="c9O-9G-k5F"/>
-                            <exclude reference="tWj-15-z4u"/>
-                            <exclude reference="x70-X8-GK6"/>
-                            <exclude reference="89U-Yi-ND3"/>
                             <exclude reference="4VI-ep-6oO"/>
                             <exclude reference="M5C-pn-QYW"/>
                             <exclude reference="ueP-KQ-5iN"/>
+                            <exclude reference="89U-Yi-ND3"/>
+                            <exclude reference="c9O-9G-k5F"/>
+                            <exclude reference="tWj-15-z4u"/>
+                            <exclude reference="x70-X8-GK6"/>
                         </mask>
                     </variation>
                 </view>

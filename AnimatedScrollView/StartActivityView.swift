@@ -22,18 +22,6 @@ class StartActivityView: UIView {
         return (Bundle.main().loadNibNamed("StartActivity", owner: self, options: nil) .last as? StartActivityView)!
     }
 
-    
-    @IBOutlet weak var selectedUserPos2: NSLayoutConstraint!
-    @IBOutlet weak var selectedUserPos2FromOuterView: NSLayoutConstraint!
-    
-    var selectedUserPosition : CGFloat {
-        
-        get {
-            return selectedUserPos2.constant + selectedUserPos2FromOuterView.constant
-        }
-    }
-    
-    
     override func awakeFromNib() {
         
         super.awakeFromNib()
@@ -41,9 +29,8 @@ class StartActivityView: UIView {
         clockImg.image = UIImage(named: "alarms")?.withRenderingMode(.alwaysTemplate)
         mapImg.image = UIImage(named:"map_location")?.withRenderingMode(.alwaysTemplate)
 
+        // need this because it cannot be set as a runtime attrib on the nib
         self.outerView.layer.borderColor = UIColor.white().cgColor
-        self.outerView.layer.masksToBounds = false
-        self.outerView.layer.shadowColor = UIColor(hex:0x6699ff).cgColor
     }
     
     

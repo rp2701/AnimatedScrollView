@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:AnimatedScrollView.xcodeproj">
+      location = "self:">
    </FileRef>
 </Workspace>
