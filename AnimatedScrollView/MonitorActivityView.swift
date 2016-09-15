@@ -14,19 +14,17 @@ class MonitorActivityView: UIView {
     @IBOutlet weak var currentLocView: UIView!
     @IBOutlet weak var mapPin: UIImageView!
     @IBOutlet weak var stopWatch: UIImageView!
-    
     @IBOutlet weak var pathView: UIView!
+    @IBOutlet weak var selectedUser: UIView!
+    
     var shapeLayer : CAShapeLayer?
     var shapeLayer1 : CAShapeLayer?
     
-    
-    
-    @IBOutlet weak var selectedUser: UIView!    
-    
+    var position4 : CGFloat {
+        return self.pathView.frame.origin.x + self.selectedUser.frame.origin.x
+    }
 
     
-    var position4 : CGFloat?
-
     static func CustomView() -> MonitorActivityView {
         
         return (Bundle.main().loadNibNamed("MonitorActivity", owner: self, options: nil) .last as? MonitorActivityView)!
@@ -34,6 +32,7 @@ class MonitorActivityView: UIView {
     
     
     override func awakeFromNib() {
+        
         super.awakeFromNib()
         
         // set the horizontal position off the screen; animated later
@@ -44,32 +43,33 @@ class MonitorActivityView: UIView {
         self.mapPin.image = UIImage(named: "map_pin")?.withRenderingMode(.alwaysTemplate)
         self.stopWatch.image = UIImage(named: "stop_watch")?.withRenderingMode(.alwaysTemplate)
         
-        // create and add the stroked path
+        // get the layer to stroke the black path
         self.shapeLayer = self.getPathLayer()
         
+        // scale the shape layer to half the size to fit path view
         self.shapeLayer?.transform = CATransform3DMakeScale(0.5, 0.5, 1);
-        // scale the shape layer to half the size
+        
+        // add it to the pathView to be drawn
         self.pathView.layer.addSublayer(self.shapeLayer!)
         
+        // get the layer to stroke the white path
         self.shapeLayer1 = self.getPathLayer1()
+        
         // scale the shape layer to half the size
         self.shapeLayer1?.transform = CATransform3DMakeScale(0.5, 0.5, 1);
         
+        // add it to the pathView to be drawn
         self.pathView.layer.addSublayer(self.shapeLayer1!)
     }
     
-    override func layoutSubviews() {
-         position4 = self.pathView.frame.origin.x + self.selectedUser.frame.origin.x
-        print("Position4: \(position4)")
-    }
-    
+
     func animateCurrentLocView(percentage: CGFloat) {
         
         switch percentage {
             case 0.50:
                 self.horizontalPosition.constant = -176.0
             case 0.75:
-                self.horizontalPosition.constant = 80.0
+                self.horizontalPosition.constant = 82.0
             default:
                 break
         }
@@ -85,36 +85,22 @@ class MonitorActivityView: UIView {
                        completion: nil)
     }
     
+
     func animatePath(percentage: CGFloat) {
     
-        
-        let minScale = 0.50
+        let minScale = 0.58
         let maxScale = 0.75
-        
         let scalingFactor = maxScale - minScale
-        
         let actualScale = (Double(percentage) - minScale) / scalingFactor
-        
-        // use a constant velocity
-        let options = UIViewKeyframeAnimationOptions.calculationModeCubicPaced
-        print("Actual scale: \(actualScale)")
-        
-        if actualScale <= 1.0 {
-            UIView.animateKeyframes(withDuration: 1.0, delay: 0.5, options: options, animations: {
-                
-                // animate the stroke
-                UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0, animations: {
-                    self.shapeLayer?.strokeEnd = fabs(CGFloat(actualScale))
-                    self.shapeLayer1?.strokeEnd = fabs(CGFloat(actualScale))
-                })
-                
-                }, completion: nil)
-        }
+    
+        // animates the black and white path layers.
+        self.shapeLayer?.strokeEnd = fabs(CGFloat(actualScale))
+        self.shapeLayer1?.strokeEnd = fabs(CGFloat(actualScale))
     }
     
     
-    func getStrokePath() -> CGPath
-    {
+    func getStrokePath() -> CGPath {
+        
         let path = UIBezierPath()
     
         path.move(to: CGPoint(x: 160,y: 25))
@@ -141,6 +127,7 @@ class MonitorActivityView: UIView {
         
         return shapeLayer
     }
+    
 
     func getPathLayer1() -> CAShapeLayer {
         

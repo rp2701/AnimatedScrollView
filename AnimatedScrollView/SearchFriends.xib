@@ -42,10 +42,10 @@
                         <constraint firstAttribute="height" constant="40" id="sUP-1I-OJY"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search" translatesAutoresizingMaskIntoConstraints="NO" id="iMR-HO-Zij">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search" translatesAutoresizingMaskIntoConstraints="NO" id="iMR-HO-Zij" userLabel="searchUsers">
                     <color key="tintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                 </imageView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qic-Bl-6ga" userLabel="initialPositionView">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qic-Bl-6ga" userLabel="selectedUserPos1">
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="40" id="BAe-BE-dbV"/>
@@ -74,12 +74,12 @@
                 <constraint firstItem="vfu-sR-sDU" firstAttribute="top" secondItem="2Lm-yx-UPb" secondAttribute="bottom" constant="116" id="sM6-PI-7TQ"/>
             </constraints>
             <connections>
-                <outlet property="athleteSearch" destination="iMR-HO-Zij" id="44C-YZ-Str"/>
+                <outlet property="searchUsers" destination="iMR-HO-Zij" id="9Wv-UU-NST"/>
+                <outlet property="selectedUser" destination="vfu-sR-sDU" id="vCv-5h-GDk"/>
                 <outlet property="selectedUserPos1" destination="Af0-97-uNu" id="JWZ-Th-uG1"/>
                 <outlet property="selectedUserPosition1" destination="Qic-Bl-6ga" id="825-sD-CDs"/>
                 <outlet property="user1" destination="Hge-eI-lOr" id="4pM-Oi-WUf"/>
                 <outlet property="user2" destination="J7a-RB-xen" id="ux3-di-UsH"/>
-                <outlet property="userSearch" destination="iMR-HO-Zij" id="kw0-Un-tST"/>
             </connections>
             <point key="canvasLocation" x="32.5" y="51.5"/>
         </view>

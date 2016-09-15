@@ -44,46 +44,34 @@ public class BarGraphView: UIView {
         
         self.shapeLayer = self.getPathLayer()
         self.pathView.layer.addSublayer(self.shapeLayer!)
-        
     }
     
     
     public func animateViews(percentage: CGFloat) {
 
-        if (!fixedLayerPosition!) {
+        if self.fixedLayerPosition! == false {
             for uiView in stackView.arrangedSubviews {
                 fixLayerPosition(bar: uiView)
             }
             fixedLayerPosition = true
         }
-        let duration = 1.0
+        
         let minScale = 0.78
         let maxScale = 1.0
         
         let scalingFactor = maxScale - minScale
         
         let actualScale = (Double(percentage) - minScale) / scalingFactor
-        
-        // use a constant velocity
-        let options = UIViewKeyframeAnimationOptions.calculationModeCubicPaced
         print("Actual scale: \(actualScale)")
         
         if actualScale <= 1.0 {
-            UIView.animateKeyframes(withDuration: duration, delay: 0, options: options, animations: {
-                
-                // animate teh bars
-                for v in self.stackView.arrangedSubviews {
-                    UIView.addKeyframe(withRelativeStartTime: actualScale, relativeDuration: 0, animations: {
-                        v.transform = CGAffineTransform(scaleX: fabs(CGFloat(actualScale)), y: fabs(CGFloat(actualScale)))
-                    })
-                }
-                
-                // animate the stroke
-                UIView.addKeyframe(withRelativeStartTime: actualScale, relativeDuration: 0, animations: {
-                    self.shapeLayer?.strokeEnd = CGFloat(actualScale)
-                })
-                
-            }, completion: nil)
+            // animate the bars
+            for v in self.stackView.arrangedSubviews {
+                v.transform = CGAffineTransform(scaleX: fabs(CGFloat(actualScale)), y: fabs(CGFloat(actualScale)))
+            }
+        
+            // animate the path layer
+            self.shapeLayer?.strokeEnd = CGFloat(actualScale)
         }
     }
     
@@ -106,18 +94,9 @@ public class BarGraphView: UIView {
 //        path.move(to: CGPoint(x: 85,y: 360))
 //        path.addCurve(to: CGPoint(x: 300, y: 360), controlPoint1: CGPoint(x: 140, y: 275), controlPoint2: CGPoint(x: 160, y: 450))
         
-//        path.move(to: CGPoint(x: 105,y: 430))
-//        path.addCurve(to: CGPoint(x: 310, y: 430), controlPoint1: CGPoint(x: 160, y: 337), controlPoint2: CGPoint(x: 160, y: 519))
-        
-        
-//        path.move(to: CGPoint(x: 105,y: 430))
-//        path.addCurve(to: CGPoint(x: 310, y: 430), controlPoint1: CGPoint(x: 160, y: 337), controlPoint2: CGPoint(x: 160, y: 519))
-        
-        
         
         path.move(to: CGPoint(x: 0,y: 100))
         path.addCurve(to: CGPoint(x: 210, y: 100), controlPoint1: CGPoint(x: 40, y: 0), controlPoint2: CGPoint(x: 120, y: 200))
-
         
         //draw the stroke
         path.stroke()
@@ -125,8 +104,6 @@ public class BarGraphView: UIView {
         return path.cgPath
     }
 
-    
-    
     
     func getPathLayer() -> CAShapeLayer {
         

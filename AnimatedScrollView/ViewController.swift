@@ -12,7 +12,6 @@ import UIKit
 @available(iOS 10.0, *)
 class ViewController: UIViewController, UIScrollViewDelegate {
 
-    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var joinButton: UIButton!
     @IBOutlet weak var signInButton: UIButton!
@@ -30,9 +29,11 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     var barGraphView: BarGraphView?
     
     
-    var totalOffset : CGFloat?
-    
-//    static var count = 0
+    var totalOffset : CGFloat {
+        get {
+            return (self.searchFriendsView?.position2)! + (self.startActivityView?.bounds.width)! + (self.trackingView?.position4)!
+        }
+    }
     
     let color2 = 0x66e6ff
     let color1 = 0x6699ff
@@ -58,7 +59,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             // calculates the frame for each subview to be inserted into scroll view
             frame.origin.x = self.scrollView.frame.size.width * CGFloat(index)
             frame.size = self.scrollView.frame.size
-            print(frame.size)
             
             switch index {
                 case 0:
@@ -84,30 +84,18 @@ class ViewController: UIViewController, UIScrollViewDelegate {
                     self.barGraphView?.frame = frame
                     self.scrollView.addSubview(self.barGraphView!)
                 default:
-                    let subView = UIView(frame: frame)
-                    self.scrollView .addSubview(subView)
+                    break
             }
         }
         
-        // configures scrollView
-//        print("ScrollView width: \(self.scrollView.bounds.size.width)")
+        // set the contentSize on the scoll view
         self.scrollView.contentSize = CGSize.init(width: scrollWidth * 5, height: scrollHeight)
-        
-        
-        self.scrollView.isPagingEnabled = true
         self.scrollView.showsHorizontalScrollIndicator = false
-        self.scrollView.isScrollEnabled = true
         
         self.configureMainTitleLabel()
         self.configureButtons()
         
         self.selectedUser = UIImageView(frame: CGRect(x: self.scrollView.contentSize.width/5 + 70, y: 350, width: 40, height: 40))
-        let imgFrame = self.selectedUser?.frame
-        
-        
-    
-        self.selectedUser = UIImageView()
-        self.selectedUser?.frame = imgFrame!
         self.selectedUser?.image = UIImage(named: "athlete-face")
         self.selectedUser?.alpha = 0
         self.scrollView.addSubview(self.selectedUser!)
@@ -120,8 +108,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         title.textColor = UIColor(hex:0xffffff)
         title.font = UIFont(name: "AvenirNextCondensed-DemiBoldItalic", size: 48.0)
         title.text = "RunWithMe"
-    
-        
         title.translatesAutoresizingMaskIntoConstraints = false
         
         self.scrollView.addSubview(title)
@@ -165,8 +151,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     }
     
     
-    func configureStartActivityView()
-    {
+    func configureStartActivityView() {
+        
         let startActivityView = StartActivityView.CustomView()
         startActivityView.frame = frame
         self.scrollView.addSubview(startActivityView)
@@ -196,16 +182,21 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             case 0.25:
                 searchFriendsView?.animateUsers(percentage)
             
-                UIView.animate(withDuration: 0.6, delay: 0.2, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: UIViewAnimationOptions.curveEaseOut, animations: {
-                        self.selectedUser?.transform = CGAffineTransform(translationX: (self.searchFriendsView?.position1)!, y: 0) //
-                        self.selectedUser?.alpha = 1.0
-                    }, completion: nil)
+                UIView.animate(withDuration: 0.6,
+                               delay: 0.2,
+                               usingSpringWithDamping: 0.7,
+                               initialSpringVelocity: 0.5,
+                               options: UIViewAnimationOptions.curveEaseOut,
+                               animations: {
+                                    self.selectedUser?.transform = CGAffineTransform(translationX: (self.searchFriendsView?.position1)!, y: 0)
+                                    self.selectedUser?.alpha = 1.0
+                                }, completion: nil)
             case 0.5:
                 if self.panLeft {
                     self.startActivityView?.animateIcons(percentage: percentage)
                 }
                 fallthrough
-            case 0.5...0.75:
+            case 0.50...0.75:
                 self.trackingView?.animatePath(percentage: percentage)
                 self.trackingView?.animateCurrentLocView(percentage: percentage)
                 fallthrough
@@ -221,28 +212,16 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     func animateSelectedUser(_ percentage: CGFloat) {
         
-        if totalOffset == nil {
-           
-            totalOffset = (self.searchFriendsView?.position2)! + (self.startActivityView?.bounds.width)! + (self.trackingView?.position4)!
-            
-            print("Total Offset: \(totalOffset!)")
-        }
-        
         let minScale = 0.12
         let maxScale = 0.75
         let scalingFactor = maxScale - minScale
         let actualScale = (Double(percentage) - minScale) / scalingFactor
-        
-        UIView.animateKeyframes(withDuration: 0, delay: 0, options: UIViewKeyframeAnimationOptions.calculationModeCubicPaced, animations: {
-            
-                let tX = actualScale * Double(self.totalOffset!) // REMOVE  hardwired value
-//                let tX = actualScale * 875// REMOVE  hardwired value
-                print("Translate \(percentage * 100) : \(tX)")
-                UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0, animations: {
-                self.selectedUser?.alpha = 1.0
-                self.selectedUser?.transform = CGAffineTransform(translationX: CGFloat(tX), y: 0)
-            })
-        }, completion:nil)
+
+        let tX = actualScale * Double(self.totalOffset)
+
+        print("tx: \(tX)")
+        self.selectedUser?.alpha = 1.0
+        self.selectedUser?.transform = CGAffineTransform(translationX: CGFloat(tX), y: 0)
     }
     
     
@@ -252,7 +231,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         // Do something with your page update
         print("scrollViewDidEndDecelerating - currentPage: \(currentPage)")
         
-        if currentPage != self.currentPage { // check ensures view reaches the end not user trying to track some content
+        // check for end of page and not user trying to track some content
+        if currentPage != self.currentPage { //
             // set the progressbar to current page
             self.progressStackView.arrangedSubviews[currentPage].backgroundColor = UIColor(hex:0xffcc66)
             self.progressStackView.arrangedSubviews[self.currentPage].backgroundColor = UIColor.lightGray()

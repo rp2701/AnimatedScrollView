@@ -12,10 +12,7 @@ class StartActivityView: UIView {
     
     @IBOutlet weak var clockImg: UIImageView!
     @IBOutlet weak var mapImg: UIImageView!
-    
     @IBOutlet weak var outerView: UIView!
-    
-    var blurredImgView: UIImageView?
     
     static func CustomView() -> StartActivityView {
         
