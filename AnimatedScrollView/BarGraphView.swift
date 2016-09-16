@@ -44,6 +44,8 @@ public class BarGraphView: UIView {
         
         self.shapeLayer = self.getPathLayer()
         self.pathView.layer.addSublayer(self.shapeLayer!)
+        
+        self.stackView.layer.borderColor = UIColor(hex: 0x6699ff).cgColor
     }
     
     

@@ -63,7 +63,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             switch index {
                 case 0:
                     let subView = UIView(frame: frame)
-                    let bgView = UIImageView(image: UIImage(named: "app-bg5"))
+                    let bgView = UIImageView(image: UIImage(named: "app-bg-main1"))
                     bgView.frame = frame
                     subView.addSubview(bgView)
                     self.scrollView .addSubview(subView)
