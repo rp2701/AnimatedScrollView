@@ -27,7 +27,7 @@ class MonitorActivityView: UIView {
     
     static func CustomView() -> MonitorActivityView {
         
-        return (Bundle.main().loadNibNamed("MonitorActivity", owner: self, options: nil) .last as? MonitorActivityView)!
+        return (Bundle.main.loadNibNamed("MonitorActivity", owner: self, options: nil)! .last as? MonitorActivityView)!
     }
     
     
@@ -37,7 +37,7 @@ class MonitorActivityView: UIView {
         
         // set the horizontal position off the screen; animated later
         self.horizontalPosition.constant = -176.0
-        self.currentLocView.layer.borderColor = UIColor.white().cgColor
+        self.currentLocView.layer.borderColor = UIColor.white.cgColor
         self.currentLocView.layer.borderWidth  = 1.0
         
         self.mapPin.image = UIImage(named: "map_pin")?.withRenderingMode(.alwaysTemplate)
@@ -119,11 +119,11 @@ class MonitorActivityView: UIView {
     func getPathLayer() -> CAShapeLayer {
         
         let shapeLayer = CAShapeLayer()
-        shapeLayer.backgroundColor = UIColor.lightGray().cgColor
+        shapeLayer.backgroundColor = UIColor.lightGray.cgColor
         shapeLayer.path = self.getStrokePath()
-        shapeLayer.strokeColor = UIColor.black().cgColor
+        shapeLayer.strokeColor = UIColor.black.cgColor
         shapeLayer.lineWidth = 20
-        shapeLayer.fillColor = UIColor.green().cgColor
+        shapeLayer.fillColor = UIColor.green.cgColor
         
         return shapeLayer
     }
@@ -132,9 +132,9 @@ class MonitorActivityView: UIView {
     func getPathLayer1() -> CAShapeLayer {
         
         let shapeLayer = CAShapeLayer()
-        shapeLayer.backgroundColor = UIColor.lightGray().cgColor
+        shapeLayer.backgroundColor = UIColor.lightGray.cgColor
         shapeLayer.path = self.getStrokePath()
-        shapeLayer.strokeColor = UIColor.white().cgColor
+        shapeLayer.strokeColor = UIColor.white.cgColor
         shapeLayer.lineWidth = 2.0
         shapeLayer.fillColor = nil
         

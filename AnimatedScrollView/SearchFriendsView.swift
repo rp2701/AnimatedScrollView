@@ -21,7 +21,7 @@ class SearchFriendsView: UIView {
     
     static func CustomView() -> SearchFriendsView {
         
-        return (Bundle.main().loadNibNamed("SearchFriends", owner: self, options: nil) .last as? SearchFriendsView)!
+        return (Bundle.main.loadNibNamed("SearchFriends", owner: self, options: nil)! .last as? SearchFriendsView)!
     }
     
     

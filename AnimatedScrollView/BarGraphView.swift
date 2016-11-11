@@ -24,7 +24,7 @@ public class BarGraphView: UIView {
     
     
     static func CustomView() -> BarGraphView {
-        return (Bundle.main().loadNibNamed("BarGraphView", owner: self, options: nil) .last as? BarGraphView)!
+        return (Bundle.main.loadNibNamed("BarGraphView", owner: self, options: nil)! .last as? BarGraphView)!
     }
     
     
@@ -110,7 +110,7 @@ public class BarGraphView: UIView {
     func getPathLayer() -> CAShapeLayer {
         
         let shapeLayer = CAShapeLayer()
-        shapeLayer.backgroundColor = UIColor.lightGray().cgColor
+        shapeLayer.backgroundColor = UIColor.lightGray.cgColor
         shapeLayer.path = self.getStrokePath()
         shapeLayer.strokeColor = UIColor(hex: 0xffcc66).cgColor
         shapeLayer.lineWidth = 2.0

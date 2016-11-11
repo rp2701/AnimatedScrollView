@@ -28,6 +28,10 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     var trackingView: MonitorActivityView?
     var barGraphView: BarGraphView?
     
+    override var prefersStatusBarHidden: Bool {
+        get {
+            return true }
+    }
     
     var totalOffset : CGFloat {
         get {
@@ -145,8 +149,11 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
         self.joinButton.layer.cornerRadius = 4.0
         self.joinButton.layer.borderWidth = 1.0
-        self.joinButton.layer.borderColor = UIColor.white().cgColor
-        self.joinButton.tintColor = UIColor.white()
+        self.joinButton.layer.borderColor = UIColor.white.cgColor
+        self.joinButton.tintColor = UIColor.white
+        
+        self.joinButton .addTarget(self, action: #selector(ViewController.loginView), for: UIControlEvents.touchUpInside)
+        
         self.signInButton.tintColor = UIColor(hex:0xffffff)
     }
     
@@ -235,7 +242,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         if currentPage != self.currentPage { //
             // set the progressbar to current page
             self.progressStackView.arrangedSubviews[currentPage].backgroundColor = UIColor(hex:0xffcc66)
-            self.progressStackView.arrangedSubviews[self.currentPage].backgroundColor = UIColor.lightGray()
+            self.progressStackView.arrangedSubviews[self.currentPage].backgroundColor = UIColor.lightGray
             self.currentPage = currentPage
         }
     }
@@ -256,15 +263,21 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
+    func loginView() {
+        
+        let vc = LoginViewController()
+        let navigationController = UINavigationController(rootViewController: vc)
+        
+        self.present(navigationController, animated: true, completion: nil)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    override func prefersStatusBarHidden() -> Bool {
-        return true
-    }
+    
+   
 }
 
 

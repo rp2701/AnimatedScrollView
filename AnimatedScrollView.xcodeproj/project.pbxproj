@@ -11,6 +11,10 @@
 		820A0D451D726AB2006093E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820A0D441D726AB2006093E2 /* ViewController.swift */; };
 		820A0D481D726AB2006093E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 820A0D461D726AB2006093E2 /* Main.storyboard */; };
 		820A0D4D1D726AB2006093E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 820A0D4B1D726AB2006093E2 /* LaunchScreen.storyboard */; };
+		821318191D90B2F800073735 /* JoinNowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821318171D90B2F800073735 /* JoinNowViewController.swift */; };
+		8213181A1D90B2F800073735 /* JoinNowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 821318181D90B2F800073735 /* JoinNowViewController.xib */; };
+		8213181E1D90B33400073735 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8213181C1D90B33400073735 /* LoginViewController.swift */; };
+		8213181F1D90B33400073735 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8213181D1D90B33400073735 /* LoginViewController.xib */; };
 		822EB31A1D7C9E920066D45B /* BarGraphView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 822EB3191D7C9E920066D45B /* BarGraphView.xib */; };
 		822EB31C1D7C9EDC0066D45B /* BarGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822EB31B1D7C9EDC0066D45B /* BarGraphView.swift */; };
 		8246E0BA1D7E3F6900E3C901 /* SearchFriends.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8246E0B91D7E3F6900E3C901 /* SearchFriends.xib */; };
@@ -29,6 +33,10 @@
 		820A0D471D726AB2006093E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		820A0D4C1D726AB2006093E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		820A0D4E1D726AB2006093E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		821318171D90B2F800073735 /* JoinNowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinNowViewController.swift; sourceTree = "<group>"; };
+		821318181D90B2F800073735 /* JoinNowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JoinNowViewController.xib; sourceTree = "<group>"; };
+		8213181C1D90B33400073735 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8213181D1D90B33400073735 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		822EB3191D7C9E920066D45B /* BarGraphView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BarGraphView.xib; sourceTree = "<group>"; };
 		822EB31B1D7C9EDC0066D45B /* BarGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarGraphView.swift; sourceTree = "<group>"; };
 		8246E0B71D7DFCC200E3C901 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -90,8 +98,29 @@
 				8246E0C81D7E40A400E3C901 /* Monitor */,
 				8246E0BE1D7E3FDB00E3C901 /* Stats */,
 				829727B21D80F5AF003892FB /* Images.xcassets */,
+				8213181B1D90B2FE00073735 /* JoinNow */,
+				821318201D90B33800073735 /* Login */,
 			);
 			path = AnimatedScrollView;
+			sourceTree = "<group>";
+		};
+		8213181B1D90B2FE00073735 /* JoinNow */ = {
+			isa = PBXGroup;
+			children = (
+				821318181D90B2F800073735 /* JoinNowViewController.xib */,
+				821318171D90B2F800073735 /* JoinNowViewController.swift */,
+			);
+			name = JoinNow;
+			sourceTree = "<group>";
+		};
+		821318201D90B33800073735 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				8213181C1D90B33400073735 /* LoginViewController.swift */,
+				8213181D1D90B33400073735 /* LoginViewController.xib */,
+			);
+			name = Login;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		8246E0BD1D7E3FC100E3C901 /* Search */ = {
@@ -205,8 +234,10 @@
 				829727B31D80F5AF003892FB /* Images.xcassets in Resources */,
 				8246E0C21D7E404500E3C901 /* StartActivity.xib in Resources */,
 				8246E0BA1D7E3F6900E3C901 /* SearchFriends.xib in Resources */,
+				8213181A1D90B2F800073735 /* JoinNowViewController.xib in Resources */,
 				820A0D481D726AB2006093E2 /* Main.storyboard in Resources */,
 				822EB31A1D7C9E920066D45B /* BarGraphView.xib in Resources */,
+				8213181F1D90B33400073735 /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,7 +250,9 @@
 			files = (
 				8246E0C01D7E400500E3C901 /* StartActivityView.swift in Sources */,
 				8246E0C71D7E409300E3C901 /* MonitorActivityView.swift in Sources */,
+				821318191D90B2F800073735 /* JoinNowViewController.swift in Sources */,
 				822EB31C1D7C9EDC0066D45B /* BarGraphView.swift in Sources */,
+				8213181E1D90B33400073735 /* LoginViewController.swift in Sources */,
 				820A0D451D726AB2006093E2 /* ViewController.swift in Sources */,
 				820A0D431D726AB2006093E2 /* AppDelegate.swift in Sources */,
 				8246E0BC1D7E3FA200E3C901 /* SearchFriendsView.swift in Sources */,
@@ -340,7 +373,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = AnimatedScrollView/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cg.AnimatedScrollView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -354,7 +387,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = AnimatedScrollView/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cg.AnimatedScrollView;
 				PRODUCT_NAME = "$(TARGET_NAME)";

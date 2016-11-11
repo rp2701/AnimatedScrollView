@@ -16,7 +16,7 @@ class StartActivityView: UIView {
     
     static func CustomView() -> StartActivityView {
         
-        return (Bundle.main().loadNibNamed("StartActivity", owner: self, options: nil) .last as? StartActivityView)!
+        return (Bundle.main.loadNibNamed("StartActivity", owner: self, options: nil)! .last as? StartActivityView)!
     }
 
     override func awakeFromNib() {
@@ -27,7 +27,7 @@ class StartActivityView: UIView {
         mapImg.image = UIImage(named:"map_location")?.withRenderingMode(.alwaysTemplate)
 
         // need this because it cannot be set as a runtime attrib on the nib
-        self.outerView.layer.borderColor = UIColor.white().cgColor
+        self.outerView.layer.borderColor = UIColor.white.cgColor
     }
     
     
