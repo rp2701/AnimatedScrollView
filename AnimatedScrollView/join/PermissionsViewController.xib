@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11521.1" systemVersion="16B2338c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11517.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PermissionsViewController" customModule="RunWithMe" customModuleProvider="target">
+            <connections>
+                <outlet property="doneButton" destination="5WW-aU-d6N" id="ctx-8o-Ppt"/>
+                <outlet property="locationCheckmark" destination="ASz-kb-T3z" id="CJC-dX-mUn"/>
+                <outlet property="motionCheckmark" destination="2ee-ZX-z2B" id="XUh-jg-LVr"/>
+                <outlet property="notifsCheckmark" destination="pj4-mc-kr9" id="oPS-lh-0XJ"/>
+                <outlet property="stackView" destination="6o5-hE-AzX" id="lrP-Pt-D1y"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app-bg-permiss" translatesAutoresizingMaskIntoConstraints="NO" id="x8M-LU-otW"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6o5-hE-AzX">
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lkT-fw-kn0">
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location Access" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YBN-KO-zYR">
+                                    <frame key="frameInset" minX="20" minY="14" width="250" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <gestureRecognizers/>
+                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="ASz-kb-T3z">
+                                    <color key="tintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="20" id="WYe-7I-gK2"/>
+                                        <constraint firstAttribute="height" constant="20" id="juz-0D-Fw7"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <gestureRecognizers/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="2vX-uY-4Aj"/>
+                                <constraint firstItem="ASz-kb-T3z" firstAttribute="top" secondItem="lkT-fw-kn0" secondAttribute="top" constant="14" id="Fvf-Cu-6p7"/>
+                                <constraint firstAttribute="trailing" secondItem="ASz-kb-T3z" secondAttribute="trailing" constant="20" id="YFl-yH-EZA"/>
+                            </constraints>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="bPd-dr-wkP" appends="YES" id="nt1-ke-REC"/>
+                            </connections>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="txl-I9-jVG">
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Send Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tg3-na-FbS">
+                                    <frame key="frameInset" minX="20" minY="14" width="250" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView userInteractionEnabled="NO" alpha="0.20000000298023224" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="pj4-mc-kr9">
+                                    <color key="tintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="20" id="qk3-oM-ewt"/>
+                                        <constraint firstAttribute="height" constant="20" id="xxM-Sn-v3h"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <gestureRecognizers/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="2Kh-L5-SIQ"/>
+                                <constraint firstAttribute="bottom" secondItem="pj4-mc-kr9" secondAttribute="bottom" constant="14" id="4L6-tc-FzQ"/>
+                                <constraint firstAttribute="trailing" secondItem="pj4-mc-kr9" secondAttribute="trailing" constant="20" id="SVb-8P-Ktc"/>
+                            </constraints>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="uMy-77-ogb" appends="YES" id="mpi-BL-HMQ"/>
+                            </connections>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zv0-Yr-FDa">
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Motion Detection" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2K-sg-6k6">
+                                    <frame key="frameInset" minX="20" minY="14" width="250" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView userInteractionEnabled="NO" alpha="0.20000000298023224" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="2ee-ZX-z2B">
+                                    <color key="tintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="20" id="CXi-At-c3d"/>
+                                        <constraint firstAttribute="height" constant="20" id="Y0F-ht-3Eb"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <gestureRecognizers/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="HXH-53-ETV"/>
+                                <constraint firstAttribute="bottom" secondItem="2ee-ZX-z2B" secondAttribute="bottom" constant="14" id="To6-48-XHw"/>
+                                <constraint firstAttribute="trailing" secondItem="2ee-ZX-z2B" secondAttribute="trailing" constant="20" id="cCG-3R-obX"/>
+                            </constraints>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="uvc-Mi-yz2" appends="YES" id="Grr-yk-Myv"/>
+                            </connections>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="353" id="EoF-dg-8rE"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="335" id="ahT-Oj-Hgk"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="EoF-dg-8rE"/>
+                            <exclude reference="ahT-Oj-Hgk"/>
+                        </mask>
+                    </variation>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5WW-aU-d6N">
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="cjh-cd-Y8X"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
+                    <state key="normal" title="Finish it!"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="finishSignUp:" destination="-1" eventType="touchUpInside" id="5gN-Wm-wYe"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="noy-yW-fFW">
+                    <string key="text">For the best experience 
+please allow us to access your 
+location and send alerts.</string>
+                    <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ope-5b-C4t" userLabel="separatorView">
+                    <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="d0k-vf-T0i"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ope-5b-C4t" firstAttribute="top" secondItem="noy-yW-fFW" secondAttribute="bottom" constant="12" id="5Hr-CP-Cv2"/>
+                <constraint firstAttribute="bottom" secondItem="x8M-LU-otW" secondAttribute="bottom" id="9qf-Fu-8mS"/>
+                <constraint firstItem="noy-yW-fFW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="120" id="Ase-0W-COw"/>
+                <constraint firstItem="x8M-LU-otW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="AxU-9J-xNc"/>
+                <constraint firstAttribute="bottom" secondItem="5WW-aU-d6N" secondAttribute="bottom" constant="31" id="BIV-UW-fYM"/>
+                <constraint firstAttribute="trailing" secondItem="x8M-LU-otW" secondAttribute="trailing" id="CXZ-mk-w3d"/>
+                <constraint firstItem="noy-yW-fFW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="CdP-yq-Woe"/>
+                <constraint firstAttribute="trailing" secondItem="5WW-aU-d6N" secondAttribute="trailing" constant="20" id="Mko-3q-mKK"/>
+                <constraint firstAttribute="trailing" secondItem="6o5-hE-AzX" secondAttribute="trailing" constant="20" id="WO7-8Y-5Y3"/>
+                <constraint firstItem="ope-5b-C4t" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="X9W-5q-8R4"/>
+                <constraint firstItem="x8M-LU-otW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ZE5-k8-FwP"/>
+                <constraint firstAttribute="trailing" secondItem="ope-5b-C4t" secondAttribute="trailing" constant="147" id="ZJ4-aq-KwJ"/>
+                <constraint firstItem="6o5-hE-AzX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="ZzV-X5-FQm"/>
+                <constraint firstAttribute="trailing" secondItem="noy-yW-fFW" secondAttribute="trailing" constant="20" id="pKt-ag-ux0"/>
+                <constraint firstItem="5WW-aU-d6N" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="vV7-Xa-z73"/>
+                <constraint firstItem="6o5-hE-AzX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="266" id="wV6-Vb-Tjn"/>
+                <constraint firstItem="ope-5b-C4t" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="147" id="wsP-uh-fpN"/>
+            </constraints>
+            <point key="canvasLocation" x="26" y="52"/>
+        </view>
+        <tapGestureRecognizer id="bPd-dr-wkP">
+            <connections>
+                <action selector="tapLocationAccess:" destination="-1" id="DRG-3j-T2Z"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="uMy-77-ogb">
+            <connections>
+                <action selector="tapSendNotifs:" destination="-1" id="rCg-Zy-oAd"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="uvc-Mi-yz2">
+            <connections>
+                <action selector="tapDetectMotion:" destination="-1" id="Dpy-Yo-YNh"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="app-bg-permiss" width="375" height="667"/>
+        <image name="checkmark" width="16" height="16"/>
+    </resources>
+</document>

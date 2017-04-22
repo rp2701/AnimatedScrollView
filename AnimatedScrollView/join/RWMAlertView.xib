@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11521.1" systemVersion="16B2548a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11517.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RWMAlert" customModule="RunWithMe" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="9bZ-FQ-Exi" id="VQn-7S-HPW"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="9bZ-FQ-Exi">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ta8-MR-BEy">
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eU4-Dh-U7F">
+                            <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" tag="11" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_exists" translatesAutoresizingMaskIntoConstraints="NO" id="ElS-Jh-eGv">
+                            <color key="tintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="64" id="40C-it-9Xn"/>
+                                <constraint firstAttribute="width" constant="64" id="giR-2k-ofC"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tap anywhere to close" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O6G-4Z-pqy">
+                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="14"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
+                    <constraints>
+                        <constraint firstItem="eU4-Dh-U7F" firstAttribute="top" secondItem="ElS-Jh-eGv" secondAttribute="bottom" constant="27" id="4Bd-zj-al6"/>
+                        <constraint firstItem="O6G-4Z-pqy" firstAttribute="centerX" secondItem="Ta8-MR-BEy" secondAttribute="centerX" id="Bou-z4-pBO"/>
+                        <constraint firstItem="eU4-Dh-U7F" firstAttribute="centerX" secondItem="Ta8-MR-BEy" secondAttribute="centerX" id="Q6d-kM-Tvc"/>
+                        <constraint firstItem="ElS-Jh-eGv" firstAttribute="centerX" secondItem="Ta8-MR-BEy" secondAttribute="centerX" id="Sik-wM-J00"/>
+                        <constraint firstItem="eU4-Dh-U7F" firstAttribute="centerY" secondItem="Ta8-MR-BEy" secondAttribute="centerY" id="YYm-87-8li"/>
+                        <constraint firstAttribute="bottom" secondItem="O6G-4Z-pqy" secondAttribute="bottom" constant="10" id="bOF-vf-EQ9"/>
+                        <constraint firstAttribute="bottom" secondItem="eU4-Dh-U7F" secondAttribute="bottom" constant="353.33333333333331" id="m87-ND-uD2"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="m87-ND-uD2"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="fIg-og-9I3" appends="YES" id="pZM-Fo-iwL"/>
+                    </connections>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstItem="Ta8-MR-BEy" firstAttribute="top" secondItem="9bZ-FQ-Exi" secondAttribute="top" id="6Qd-Ya-a0v"/>
+                <constraint firstAttribute="trailing" secondItem="Ta8-MR-BEy" secondAttribute="trailing" id="Vo9-Zg-eCy"/>
+                <constraint firstAttribute="bottom" secondItem="Ta8-MR-BEy" secondAttribute="bottom" id="s8s-v1-Uv4"/>
+                <constraint firstItem="Ta8-MR-BEy" firstAttribute="leading" secondItem="9bZ-FQ-Exi" secondAttribute="leading" id="y5v-Hu-XVk"/>
+            </constraints>
+            <point key="canvasLocation" x="26.5" y="52.5"/>
+        </view>
+        <tapGestureRecognizer id="fIg-og-9I3">
+            <connections>
+                <action selector="tapDetected:" destination="-1" id="0CN-fl-3k5"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="user_exists" width="64" height="64"/>
+    </resources>
+</document>

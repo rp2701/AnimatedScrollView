@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11129.15" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11103.10"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SearchFriendsView" customModule="RunWithMe" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app-bg" translatesAutoresizingMaskIntoConstraints="NO" id="EQW-s8-XPL"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search and Run with friends" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Lm-yx-UPb">
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="120" id="ZR4-nB-tHr"/>
+                        <constraint firstAttribute="width" constant="294" id="z3Y-pf-CGW"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBoldItalic" family="Avenir Next Condensed" pointSize="42"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user1" translatesAutoresizingMaskIntoConstraints="NO" id="Hge-eI-lOr">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="qmb-17-BUv"/>
+                        <constraint firstAttribute="height" constant="40" id="xyG-GT-ikC"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user2" translatesAutoresizingMaskIntoConstraints="NO" id="J7a-RB-xen">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="JEY-FF-ptN"/>
+                        <constraint firstAttribute="width" constant="40" id="OuA-5j-mlU"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user-1" translatesAutoresizingMaskIntoConstraints="NO" id="vfu-sR-sDU" userLabel="selectedUser">
+                    <color key="tintColor" red="1" green="0.80000000000000004" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="j3k-UW-AE1"/>
+                        <constraint firstAttribute="height" constant="40" id="sUP-1I-OJY"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search" translatesAutoresizingMaskIntoConstraints="NO" id="iMR-HO-Zij" userLabel="searchUsers">
+                    <color key="tintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qic-Bl-6ga" userLabel="selectedUserPos1">
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="BAe-BE-dbV"/>
+                        <constraint firstAttribute="height" constant="40" id="wI3-C2-BXw"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="iMR-HO-Zij" firstAttribute="top" secondItem="vfu-sR-sDU" secondAttribute="bottom" constant="-20" id="1VG-XJ-7PG"/>
+                <constraint firstItem="Hge-eI-lOr" firstAttribute="top" secondItem="2Lm-yx-UPb" secondAttribute="bottom" constant="66" id="5vD-iJ-NaQ"/>
+                <constraint firstItem="EQW-s8-XPL" firstAttribute="leading" secondItem="vfu-sR-sDU" secondAttribute="trailing" constant="-110" id="7jx-PT-BtL"/>
+                <constraint firstAttribute="trailing" secondItem="J7a-RB-xen" secondAttribute="trailing" constant="74" id="9mO-3F-hff"/>
+                <constraint firstAttribute="trailing" secondItem="Qic-Bl-6ga" secondAttribute="trailing" constant="74" id="Af0-97-uNu"/>
+                <constraint firstItem="EQW-s8-XPL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Du5-Cr-kDU"/>
+                <constraint firstAttribute="trailing" secondItem="Hge-eI-lOr" secondAttribute="trailing" constant="74" id="FTX-hp-6dp"/>
+                <constraint firstItem="vfu-sR-sDU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="70" id="IfC-N3-9vx"/>
+                <constraint firstItem="2Lm-yx-UPb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="114" id="SZN-yl-Ove"/>
+                <constraint firstAttribute="trailing" secondItem="EQW-s8-XPL" secondAttribute="trailing" id="V62-UG-rcN"/>
+                <constraint firstItem="EQW-s8-XPL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Xy6-Nx-mPh"/>
+                <constraint firstItem="Qic-Bl-6ga" firstAttribute="top" secondItem="Hge-eI-lOr" secondAttribute="bottom" constant="10" id="Ygq-yz-dHi"/>
+                <constraint firstItem="2Lm-yx-UPb" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Z6A-AX-hkB"/>
+                <constraint firstItem="iMR-HO-Zij" firstAttribute="leading" secondItem="vfu-sR-sDU" secondAttribute="trailing" constant="-25" id="c8E-9n-4yV"/>
+                <constraint firstItem="J7a-RB-xen" firstAttribute="top" secondItem="Hge-eI-lOr" secondAttribute="bottom" constant="60" id="fdT-wx-3NU"/>
+                <constraint firstAttribute="bottom" secondItem="EQW-s8-XPL" secondAttribute="bottom" id="rSK-s0-paX"/>
+                <constraint firstItem="vfu-sR-sDU" firstAttribute="top" secondItem="2Lm-yx-UPb" secondAttribute="bottom" constant="116" id="sM6-PI-7TQ"/>
+            </constraints>
+            <connections>
+                <outlet property="searchUsers" destination="iMR-HO-Zij" id="jeq-WL-7Dw"/>
+                <outlet property="selectedUser" destination="vfu-sR-sDU" id="PIQ-YO-2fX"/>
+                <outlet property="selectedUserPos1" destination="Af0-97-uNu" id="JWZ-Th-uG1"/>
+                <outlet property="selectedUserPosition1" destination="Qic-Bl-6ga" id="fwk-QN-UPy"/>
+                <outlet property="user1" destination="Hge-eI-lOr" id="2iV-Ge-BkG"/>
+                <outlet property="user2" destination="J7a-RB-xen" id="XvK-4q-Tl9"/>
+            </connections>
+            <point key="canvasLocation" x="32.5" y="51.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="app-bg" width="375" height="667"/>
+        <image name="search" width="32" height="32"/>
+        <image name="user-1" width="40" height="40"/>
+        <image name="user1" width="40" height="40"/>
+        <image name="user2" width="40" height="40"/>
+    </resources>
+</document>
