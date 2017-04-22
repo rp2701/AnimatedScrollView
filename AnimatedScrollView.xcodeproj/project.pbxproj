@@ -35,6 +35,8 @@
 		8246E0C21D7E404500E3C901 /* StartActivity.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8246E0C11D7E404500E3C901 /* StartActivity.xib */; };
 		8246E0C51D7E407F00E3C901 /* MonitorActivity.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8246E0C41D7E407F00E3C901 /* MonitorActivity.xib */; };
 		8246E0C71D7E409300E3C901 /* MonitorActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8246E0C61D7E409300E3C901 /* MonitorActivityView.swift */; };
+		828922731EABBC150051D48A /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828922721EABBC150051D48A /* TestTableViewController.swift */; };
+		828922761EABBC700051D48A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 828922751EABBC700051D48A /* Images.xcassets */; };
 		829727B31D80F5AF003892FB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 829727B21D80F5AF003892FB /* Images.xcassets */; };
 		A097DF286FF44F2860687076 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C1730B3940695C5E1B15F0A /* Pods.framework */; };
 /* End PBXBuildFile section */
@@ -74,6 +76,8 @@
 		8246E0C11D7E404500E3C901 /* StartActivity.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StartActivity.xib; sourceTree = "<group>"; };
 		8246E0C41D7E407F00E3C901 /* MonitorActivity.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MonitorActivity.xib; sourceTree = "<group>"; };
 		8246E0C61D7E409300E3C901 /* MonitorActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitorActivityView.swift; sourceTree = "<group>"; };
+		828922721EABBC150051D48A /* TestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
+		828922751EABBC700051D48A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = AnimatedScrollView/Images.xcassets; sourceTree = "<group>"; };
 		829727B21D80F5AF003892FB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,6 +109,7 @@
 				B314AA76C589780A5AA82157 /* Frameworks */,
 				4F2704C52EC9B410C461FD7D /* Pods */,
 				820A0D401D726AB2006093E2 /* Products */,
+				828922751EABBC700051D48A /* Images.xcassets */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,12 +125,12 @@
 			isa = PBXGroup;
 			children = (
 				8222745C1DD6217B00D8591C /* Join */,
-				8222745B1DD6216900D8591C /* Join */,
 				821318201D90B33800073735 /* Login */,
 				8246E0C81D7E40A400E3C901 /* Monitor */,
 				8246E0BD1D7E3FC100E3C901 /* Search */,
 				8246E0C31D7E405800E3C901 /* StartActivity */,
 				8246E0BE1D7E3FDB00E3C901 /* Stats */,
+				828922741EABBC190051D48A /* Test */,
 				8222745A1DD61F4D00D8591C /* core-classes-enums */,
 				820A0D421D726AB2006093E2 /* AppDelegate.swift */,
 				829727B21D80F5AF003892FB /* Images.xcassets */,
@@ -143,7 +148,6 @@
 				8213181C1D90B33400073735 /* LoginViewController.swift */,
 				8213181D1D90B33400073735 /* LoginViewController.xib */,
 			);
-			name = Login;
 			path = Login;
 			sourceTree = "<group>";
 		};
@@ -152,16 +156,7 @@
 			children = (
 				822274581DD61ED200D8591C /* CenterMotionEffect.swift */,
 			);
-			name = "core-classes-enums";
 			path = "core-classes-enums";
-			sourceTree = "<group>";
-		};
-		8222745B1DD6216900D8591C /* Join */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Join;
-			path = Join;
 			sourceTree = "<group>";
 		};
 		8222745C1DD6217B00D8591C /* Join */ = {
@@ -181,7 +176,6 @@
 				822274681DD6217B00D8591C /* SpinnerAnimView.swift */,
 				822274691DD6217B00D8591C /* SpinnerAnimView.xib */,
 			);
-			name = Join;
 			path = Join;
 			sourceTree = "<group>";
 		};
@@ -191,7 +185,6 @@
 				8246E0B91D7E3F6900E3C901 /* SearchFriends.xib */,
 				8246E0BB1D7E3FA200E3C901 /* SearchFriendsView.swift */,
 			);
-			name = Search;
 			path = Search;
 			sourceTree = "<group>";
 		};
@@ -201,7 +194,6 @@
 				822EB31B1D7C9EDC0066D45B /* BarGraphView.swift */,
 				822EB3191D7C9E920066D45B /* BarGraphView.xib */,
 			);
-			name = Stats;
 			path = Stats;
 			sourceTree = "<group>";
 		};
@@ -211,7 +203,6 @@
 				8246E0C11D7E404500E3C901 /* StartActivity.xib */,
 				8246E0BF1D7E400500E3C901 /* StartActivityView.swift */,
 			);
-			name = StartActivity;
 			path = StartActivity;
 			sourceTree = "<group>";
 		};
@@ -221,8 +212,16 @@
 				8246E0C41D7E407F00E3C901 /* MonitorActivity.xib */,
 				8246E0C61D7E409300E3C901 /* MonitorActivityView.swift */,
 			);
-			name = Monitor;
 			path = Monitor;
+			sourceTree = "<group>";
+		};
+		828922741EABBC190051D48A /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				828922721EABBC150051D48A /* TestTableViewController.swift */,
+			);
+			name = Test;
+			path = Test;
 			sourceTree = "<group>";
 		};
 		B314AA76C589780A5AA82157 /* Frameworks */ = {
@@ -305,6 +304,7 @@
 				820A0D4D1D726AB2006093E2 /* LaunchScreen.storyboard in Resources */,
 				822274731DD6217B00D8591C /* RWMAlertView.xib in Resources */,
 				829727B31D80F5AF003892FB /* Images.xcassets in Resources */,
+				828922761EABBC700051D48A /* Images.xcassets in Resources */,
 				8222746D1DD6217B00D8591C /* PermissionsViewController.xib in Resources */,
 				8246E0C21D7E404500E3C901 /* StartActivity.xib in Resources */,
 				822274761DD6217B00D8591C /* SpinnerAnimView.xib in Resources */,
@@ -386,6 +386,7 @@
 				820A0D431D726AB2006093E2 /* AppDelegate.swift in Sources */,
 				8246E0BC1D7E3FA200E3C901 /* SearchFriendsView.swift in Sources */,
 				822274751DD6217B00D8591C /* SpinnerAnimView.swift in Sources */,
+				828922731EABBC150051D48A /* TestTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

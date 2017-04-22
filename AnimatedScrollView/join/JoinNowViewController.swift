@@ -8,8 +8,8 @@
 
 import UIKit
 import Alamofire
-import FBSDKCoreKit
-import FBSDKLoginKit
+//import FBSDKCoreKit
+//import FBSDKLoginKit
 
 class JoinNowViewController: UIViewController, UITextFieldDelegate {
 
@@ -344,57 +344,57 @@ class JoinNowViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func connectWithFacebook(_ sender: AnyObject) {
         
-        let login = FBSDKLoginManager()
-        
-        login.logIn(withReadPermissions: ["email", "public_profile"], from: self, handler: {
-            (result, error) in
-            if let err = error {
-                print("FB Login failed")
-                print(err.localizedDescription)
-            }
-            else if (result!.isCancelled) // if the user cancels in SafariController
-            {
-                // Logged out?
-                print( "App Signup Cancelled in SafariViewController")
-            }
-            else {
-                print("FB Email \(result?.grantedPermissions.contains("email"))")
-                print("FB Email \(result?.grantedPermissions.contains("public_profile"))")
-                
-                if (result?.grantedPermissions.contains("email"))! && (result?.grantedPermissions.contains("public_profile"))! {
-                    self.fetchUserDataFromFBGraph()
-                }
-            }
-        })
+//        let login = FBSDKLoginManager()
+//        
+//        login.logIn(withReadPermissions: ["email", "public_profile"], from: self, handler: {
+//            (result, error) in
+//            if let err = error {
+//                print("FB Login failed")
+//                print(err.localizedDescription)
+//            }
+//            else if (result!.isCancelled) // if the user cancels in SafariController
+//            {
+//                // Logged out?
+//                print( "App Signup Cancelled in SafariViewController")
+//            }
+//            else {
+//                print("FB Email \(result?.grantedPermissions.contains("email"))")
+//                print("FB Email \(result?.grantedPermissions.contains("public_profile"))")
+//                
+//                if (result?.grantedPermissions.contains("email"))! && (result?.grantedPermissions.contains("public_profile"))! {
+//                    self.fetchUserDataFromFBGraph()
+//                }
+//            }
+//        })
     }
     
     
     func fetchUserDataFromFBGraph() {
         
-        let graphRequest = FBSDKGraphRequest.init(graphPath: "me", parameters: ["fields" : "id, email, first_name, last_name"])
-        
-        _ = graphRequest?.start(completionHandler: { (connection, result, error) in
-            
-            if (error != nil) {
-                print("Graph error: \(error)")
-            } else {
-                
-                var userData : [String : String]? = result as? [String : String]
-                
-                if userData != nil {
-                    
-                    print("Graph Result: \(userData!)")
-                    userData!["token"] = FBSDKAccessToken.current().tokenString
-                    userData!["provider"] = "facebook"
-                    
-                    let reviewInfoFromFacebookVC = ReviewInfoViewController()
-                    reviewInfoFromFacebookVC.signUpData(userData!)
-                    
-                    // navigate to next scene
-                    self.navigationController?.pushViewController(reviewInfoFromFacebookVC, animated: true)
-                }
-            }
-        })
+//        let graphRequest = FBSDKGraphRequest.init(graphPath: "me", parameters: ["fields" : "id, email, first_name, last_name"])
+//        
+//        _ = graphRequest?.start(completionHandler: { (connection, result, error) in
+//            
+//            if (error != nil) {
+//                print("Graph error: \(error)")
+//            } else {
+//                
+//                var userData : [String : String]? = result as? [String : String]
+//                
+//                if userData != nil {
+//                    
+//                    print("Graph Result: \(userData!)")
+//                    userData!["token"] = FBSDKAccessToken.current().tokenString
+//                    userData!["provider"] = "facebook"
+//                    
+//                    let reviewInfoFromFacebookVC = ReviewInfoViewController()
+//                    reviewInfoFromFacebookVC.signUpData(userData!)
+//                    
+//                    // navigate to next scene
+//                    self.navigationController?.pushViewController(reviewInfoFromFacebookVC, animated: true)
+//                }
+//            }
+//        })
     }
 }
 

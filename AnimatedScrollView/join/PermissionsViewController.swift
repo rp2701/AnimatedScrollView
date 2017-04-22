@@ -145,7 +145,7 @@ class PermissionsViewController: UIViewController {
     
     @IBAction func finishSignUp(_ sender: AnyObject) {
         
-        print("Sign up data: \(self.signUpData)")
+        print("Sign up data: \(String(describing: self.signUpData))")
         
         let spinner = SpinnerAnimView(frame: self.view.bounds, message: "")
         
@@ -156,35 +156,35 @@ class PermissionsViewController: UIViewController {
             
             let params = ["facebook_auth" : self.signUpData!]
             
-            Alamofire.request(Router.signupUsingFacebook(params: params)).validate().responseJSON(completionHandler: { (response) in
-                switch response.result {
-                case .success(let data):
-                    spinner.removeFromSuperview()
-                    
-                    if let dictionary = data as? [String: Any] {
-                        switch dictionary["statuscode"] as! Int {
-                        case 0: // existing user
-                            self.showAlertView()
-                        case 1: // new user
-                            let defaults = UserDefaults.standard
-                            defaults.set(dictionary["id"], forKey: "uid")
-                            defaults.set(dictionary["name"], forKey: "name")
-                            defaults.set(dictionary["auth_token"], forKey: "auth_token")
-                            
-                            _ = self.navigationController?.popToRootViewController(animated: true)
-                        default:
-                            break
-                        }
-                    }
-                case .failure(let error):
-                    spinner.removeFromSuperview()
-                    print(error)
-                    if let data = response.data {
-                        let json = String(data: data, encoding: String.Encoding.utf8)
-                        print("Signup failed: \(json)!")
-                    }
-                }
-            })
+//            Alamofire.request(Router.signupUsingFacebook(params: params)).validate().responseJSON(completionHandler: { (response) in
+//                switch response.result {
+//                case .success(let data):
+//                    spinner.removeFromSuperview()
+//                    
+//                    if let dictionary = data as? [String: Any] {
+//                        switch dictionary["statuscode"] as! Int {
+//                        case 0: // existing user
+//                            self.showAlertView()
+//                        case 1: // new user
+//                            let defaults = UserDefaults.standard
+//                            defaults.set(dictionary["id"], forKey: "uid")
+//                            defaults.set(dictionary["name"], forKey: "name")
+//                            defaults.set(dictionary["auth_token"], forKey: "auth_token")
+//                            
+//                            _ = self.navigationController?.popToRootViewController(animated: true)
+//                        default:
+//                            break
+//                        }
+//                    }
+//                case .failure(let error):
+//                    spinner.removeFromSuperview()
+//                    print(error)
+//                    if let data = response.data {
+//                        let json = String(data: data, encoding: String.Encoding.utf8)
+//                        print("Signup failed: \(json)!")
+//                    }
+//                }
+//            })
         } else {
             
             // add the confirmation password
@@ -193,31 +193,31 @@ class PermissionsViewController: UIViewController {
             // make a user with with user as key
             let params = ["user": self.signUpData!]
             
-            Alamofire.request(Router.signupUser(params: params)).validate()
-                .responseJSON(completionHandler: { (response) in
-                switch response.result {
-                case .success(let data):
-                    if let dictionary = data as? [String:Any] {
-                        
-                        let defaults = UserDefaults.standard
-                        defaults.set(dictionary["id"], forKey: "uid")
-                        defaults.set(dictionary["name"], forKey: "name")
-                        defaults.set(dictionary["auth_token"], forKey: "auth_token")
-
-                        spinner.removeFromSuperview()
-                        _ = self.navigationController?.popToRootViewController(animated: true)
-                    }
-                case .failure(let error):
-                    print(error)
-                    if let data = response.data {
-                        spinner.removeFromSuperview()
-                        self.showAlertView()
-                        
-                        let json = String(data: data, encoding: String.Encoding.utf8)
-                        print("Signup failed: \(json)!")
-                    }
-                }
-            })
+//            Alamofire.request(Router.signupUser(params: params)).validate()
+//                .responseJSON(completionHandler: { (response) in
+//                switch response.result {
+//                case .success(let data):
+//                    if let dictionary = data as? [String:Any] {
+//                        
+//                        let defaults = UserDefaults.standard
+//                        defaults.set(dictionary["id"], forKey: "uid")
+//                        defaults.set(dictionary["name"], forKey: "name")
+//                        defaults.set(dictionary["auth_token"], forKey: "auth_token")
+//
+//                        spinner.removeFromSuperview()
+//                        _ = self.navigationController?.popToRootViewController(animated: true)
+//                    }
+//                case .failure(let error):
+//                    print(error)
+//                    if let data = response.data {
+//                        spinner.removeFromSuperview()
+//                        self.showAlertView()
+//                        
+//                        let json = String(data: data, encoding: String.Encoding.utf8)
+//                        print("Signup failed: \(json)!")
+//                    }
+//                }
+//            })
         }
     }
     
